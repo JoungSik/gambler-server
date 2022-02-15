@@ -16,7 +16,15 @@ module GamblerServer
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = 'Seoul'
+    config.active_record.default_timezone = :utc
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :ko
+
+    # Don't generate system test files.
+    config.generators.assets = false
+    config.generators.helper = false
   end
 end
