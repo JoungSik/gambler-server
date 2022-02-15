@@ -1,2 +1,28 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-6 col-sm-12">
+      <div class="card p-2">
+        <div class="card-body">
+          <h5 class="card-title"><%= current_user.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= current_user.id %></h6>
+          <p class="card-text"><%= current_user.email %></p>
+          <%= link_to "정보 수정", edit_user_registration_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-md-3 row-cols-sm-1 mb-3 g-2 gx-2">
+    <% @accounts.map do |account| %>
+      <div class="col">
+        <div class="card p-2">
+          <div class="card-body">
+            <h5 class="card-title"><%= account.server.id %></h5>
+            <p class="card-text mb-0"><%= "소지금 : #{number_with_delimiter(account.amount, :delimiter => ',')}" %></p>
+            <p class="card-text"><%= "초기화 : #{account.init_count}" %></p>
+            <%= link_to "이력 보기", "#", class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
