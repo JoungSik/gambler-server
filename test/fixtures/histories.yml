@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  server: one
+  invest: 
+  principal: 
+  result: 
+  tax: 
+  total: 
+  diameter: 1
+
+two:
+  user: two
+  server: two
+  invest: 
+  principal: 
+  result: 
+  tax: 
+  total: 
+  diameter: 1

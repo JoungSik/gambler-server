@@ -1,0 +1,25 @@
+<div data-controller="chart" data-chart-histories-value="<%= @histories.to_json %>"
+     data-chart-success-value="<%= @success_count %>" data-chart-failure-value="<%= @failure_count %>">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 mb-3">
+      <div class="<%= "card rounded mb-3 p-2 border-3 #{@account.amount > 0 ? 'border-danger' : 'border-primary'}" %>">
+        <div class="card-body">
+          <%= render "accounts/account", account: @account %>
+        </div>
+      </div>
+      <div class="card rounded mb-3 p-2 border-3">
+        <div class="card-body">
+          <h5 class="card-title">서버내 랭킹</h5>
+          <p class="card-text mb-0">소지금 순위 : <%= @rank_total_amount %>등</p>
+          <p class="card-text mb-0">초기화 순위 : <%= @rank_init_count %>등</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 mb-3">
+      <canvas data-chart-target="count"></canvas>
+    </div>
+  </div>
+  <div class="row">
+    <canvas data-chart-target="history"></canvas>
+  </div>
+</div>
