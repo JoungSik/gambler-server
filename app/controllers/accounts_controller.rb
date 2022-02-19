@@ -13,7 +13,7 @@ class AccountsController < ApplicationController
     @failure_count = History.where(user: @account.user, server: @account.server).where("result < 0").count
     @rank_total_amount = Account.where(server: @account.server).order(amount: :desc).find_index(@account) + 1
     @rank_init_count = Account.where(server: @account.server).order(init_count: :desc).find_index(@account) + 1
-    @histories = History.where(user: @account.user, server: @account.server).last(20)
+    @histories = History.where(user: @account.user, server: @account.server).where("total >= 0").last(20)
   end
 
   # GET /accounts/new
