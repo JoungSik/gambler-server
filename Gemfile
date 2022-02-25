@@ -33,6 +33,12 @@ gem "jbuilder"
 # Flexible authentication solution for Rails with Warden. [https://github.com/heartcombo/devise]
 gem 'devise'
 
+# Provides CSRF protection on OmniAuth request endpoint on Rails application. [https://github.com/cookpad/omniauth-rails_csrf_protection]
+gem "omniauth-rails_csrf_protection"
+
+# Discord OAuth2 Strategy for OmniAuth [https://github.com/adaoraul/omniauth-discord]
+gem 'omniauth-discord'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
